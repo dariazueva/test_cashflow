@@ -70,7 +70,7 @@ class SubCategory(models.Model):
 class CashFlowRecord(models.Model):
     """Основная модель учета ддс."""
 
-    created_at = models.DateField(auto_created=True, default=timezone.now())
+    created_at = models.DateField(default=timezone.localdate)
     status = models.ForeignKey(Status, on_delete=models.CASCADE)
     operation_type = models.ForeignKey(
         OperationType,
